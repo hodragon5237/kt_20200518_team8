@@ -1,0 +1,21 @@
+<h1>다음 뉴스 keyword 검색_20대 여성 상위 5위</h1>
+<form action="/news/ranking/age" method="POST">
+    <p><input type="date" name="date" placeholder="">
+       <input type="submit", value='검색'></p>
+</form>
+
+<h1><a href="/">웹크롤링 팀 프로젝트 Main</a></h1>
+
+<hr>
+
+<ol> 
+    {% for link in links %}
+    <li><a href='/news/words?url={{link[1]}}'>'{{link[0]}}'</a></li>
+    {% endfor %} 
+</ol>
+
+<hr>
+{% for k,v in texts %}
+    <li>{{ k }}: {{ v }}</li>
+{% endfor %}
+

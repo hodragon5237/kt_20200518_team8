@@ -175,4 +175,23 @@ def download(keyword):
 
     return render_template('download.html',img_links=img_links)
 
+# (옵션)
+# 다음 랭킹 뉴스 페이지(https://media.daum.net/ranking/)의
+# 하위 탭 메뉴와 페이지들을 확인하고, 크롤링을 통해 
+# 유용한 기능을 파트너와 함께 자유롭게 기획하여 추가해 봅시다.
+
+@app.route('/news/ranking/age', methods=['get','post'])
+def news_ranking_age():
+    if request.method == "GET":
+        return render_template("news_ranking_age.html")
+    
+    url = "https://media.daum.net/ranking/age/?regDate="
+    date = request.form.get('date')
+    # date = date.strftime('%Y%m%d')
+    rq_url = url+date
+    res = requests.get(rq_url)
+    links = [(tag.a.get_text(),tag.a.get('href')) for tag in BeautifulSoup(res.content, 'html.parser').select('.item_20s .rank_female .list_age li')]
+
+    return render_template('news_ranking_age.html',links=links)
+
 app.run()
