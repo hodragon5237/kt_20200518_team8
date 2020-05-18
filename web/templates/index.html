@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB-Python</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1><a href="/">웹크롤링 팀 프로젝트</a></h1>
+        <div id="container">
+            <div>
+                <h2>welcome</h2> 
+                <p>{% if user %}{{ user['id'] }}{% else %}비회원{% endif %} 님 안녕하세요.
+                    {% if user %}<a href="/logout"><input type='submit' value="logout"></a><a href="/withdrawal"><input type='submit' value="회원탈퇴"></a>
+                        {% else %}<a href="/login"><input type='submit' value="login"></a><a href="/join"><input type='submit' value="회원등록"></a>
+                        {% endif %}</p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, voluptatem.
+
+                <a href="/news/ranking"><h2>다음 뉴스 랭킹 검색</h2></a>
+                <a href="/download/고양이"><h2>구글이미지 검색 다운로드(Default 고양이)</h2></a>
+            </div>    
+        </div>
+    </body>
+</html>

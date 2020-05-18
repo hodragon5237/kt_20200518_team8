@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB-Python</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1><a href="/">웹크롤링 팀 프로젝트 Main</a></h1>
+        <div id="container">
+            <form action='/join' method="POST">
+                <p><input type='text' name="userid" placeholder="userid"></p>
+                <p><input type='text' name="profile" placeholder="profile"></p>
+                <p><input type='password' name="password" placeholder="password"></p>
+                <p><input type='submit' value="회원등록"></p>
+            </form>
+            <div>{{ msg }}</div>
+            </div>    
+        </div>
+    </body>
+</html>
